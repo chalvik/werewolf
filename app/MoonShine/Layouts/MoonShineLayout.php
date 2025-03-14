@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Layouts;
 
+use App\MoonShine\Resources\EventsResource;
+use App\MoonShine\Resources\GalleriesResource;
+use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\PagesResource;
 use MoonShine\Laravel\Layouts\AppLayout;
 use MoonShine\ColorManager\ColorManager;
 use MoonShine\Contracts\ColorManager\ColorManagerContract;
@@ -30,6 +34,7 @@ use MoonShine\UI\Components\{Breadcrumbs,
     Layout\TopBar,
     Layout\Wrapper,
     When};
+use MoonShine\MenuManager\MenuItem;
 
 final class MoonShineLayout extends AppLayout
 {
@@ -44,6 +49,10 @@ final class MoonShineLayout extends AppLayout
     {
         return [
             ...parent::menu(),
+            MenuItem::make('Текстовые страницы', PagesResource::class),
+            MenuItem::make('Новости', NewsResource::class),
+            MenuItem::make('События', EventsResource::class),
+            MenuItem::make('Галереи Фото', GalleriesResource::class),
         ];
     }
 

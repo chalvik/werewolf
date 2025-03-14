@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\EventsResource;
+use App\MoonShine\Resources\GalleriesResource;
+use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\PagesResource;
 use Illuminate\Support\ServiceProvider;
 use MoonShine\Contracts\Core\DependencyInjection\ConfiguratorContract;
 use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
@@ -27,6 +31,11 @@ class MoonShineServiceProvider extends ServiceProvider
             ->resources([
                 MoonShineUserResource::class,
                 MoonShineUserRoleResource::class,
+
+                NewsResource::class,
+                PagesResource::class,
+                EventsResource::class,
+                GalleriesResource::class
             ])
             ->pages([
                 ...$config->getPages(),
