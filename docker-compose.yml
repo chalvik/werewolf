@@ -1,0 +1,61 @@
+version: '1.0'
+
+services:
+  nginx-werewolf:
+    container_name: nginx-werewolf
+    image: nginx:1.24
+    restart: "no"
+    ports:
+      - "${APP_PORT}:80"
+    volumes:
+      - .:/var/www/
+      - ./.docker/config/nginx/:/etc/nginx/conf.d/
+      - ./.docker/logs/nginx:/var/log/nginx/
+    networks:
+      - web-network-werewolf
+
+  php-werewolf:
+    build:
+      context: ./.docker
+    container_name: php-werewolf
+    restart: "no"
+    working_dir: /var/www/
+    volumes:
+      - .:/var/www/
+    networks:
+      - web-network-werewolf
+
+  redis-werewolf:
+    container_name: redis-werewolf
+    image: redis:7.4.0-alpine
+    restart: "no"
+    networks:
+      - web-network-werewolf
+
+  mysql-werewolf:
+    container_name: mysql-werewolf
+    image: mysql:latest
+    restart: "no"
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - ./logs/mysql/:/var/logs/mysql
+      - db-werewolf:/var/lib/mysql
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      MYSQL_ROOT_PASSWORD: local
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - web-network-werewolf
+
+volumes:
+    db-werewolf:
+        name: db-werewolf
+
+networks:
+  web-network-werewolf:
+    name: web-network-werewolf
+    driver: bridge
