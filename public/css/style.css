@@ -1,0 +1,344 @@
+html {
+    height: 100%;
+    background-color: #000000;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    background-color: #000000;
+    background: url("/image/header_bg.jpg") no-repeat center top;
+    background-size: 100%;
+    /*height: 841rem; !* image height 741rem *!*/
+    height: 100%;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+a {
+    /*font-family: "Open Sans", sans-serif;*/
+    color: inherit;
+    text-decoration: inherit;
+}
+a:hover {
+    /*font-family: "Open Sans", sans-serif;*/
+    color: inherit;
+    text-decoration: inherit;
+}
+.nav a {
+    /*font-family: "Open Sans", sans-serif;*/
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.row-block {
+    white-space: nowrap;
+}
+
+.block {
+    display: inline-block;
+    float: left;
+}
+
+.soc_icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.center-block {
+    width: 75%;
+    margin-right: 0;
+    margin-left: 0;
+    display: inline-block;
+    float: left;
+}
+
+/*.margin-20-block {*/
+/*    width: 12.5%;*/
+/*    margin-right: 0;*/
+/*    margin-left: 0;*/
+/*    padding-right: 0;*/
+/*    padding-top: 0;*/
+/*    display: inline-block;*/
+/*    float: left;*/
+/*}*/
+
+.head {
+    height: 3.938rem;
+    width: 100%;
+    max-width: 61.250rem;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #000000;
+    top: 0;
+}
+
+/*.head-top {*/
+/*    width: 75%;*/
+/*    height: 42rem;*/
+/*    top: 0;*/
+/*    margin-right: 12.5%;*/
+/*    margin-left: 12.5%;*/
+/*}*/
+
+.head-logo {
+    width: 60%;
+    /*margin-right: 12.5%;*/
+    /*margin-left: 12.5%;*/
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 61.250rem;
+    padding-right: 5%;
+    padding-left: 5%;
+    height: 13.750rem;
+}
+
+.content-right {
+    float: right;
+}
+
+.nav {
+    margin-top: 12.500rem;
+    margin-bottom: 3.125rem;
+    height: 1.875rem;
+    width: 100%;
+    background-color: #000000;
+    opacity: 50%;
+    padding-top: 0.313rem;
+    text-align: center;
+}
+
+.nav-menu {
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+
+.navbar {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-right: 6.250rem
+}
+
+.navbar li {
+    display: inline;
+}
+
+.nav-menu li + li:before{
+    content: " | ";
+    padding: 0 0.625rem;
+    display: inline;
+}
+
+.bottom {
+    height: 14.250rem;
+    background-color: #201f21;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.content {
+    margin-top: 1.875rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 61.250rem;
+}
+
+.content-title {
+    padding-top: 1.875rem;
+    padding-right: 3.125rem;
+    margin: auto;
+    text-align: center;
+    font-size: 1.438rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.content-data {
+    width: 100%;
+    /*max-width: 67.500rem;*/
+    max-width: 61.250rem;
+    margin-top: 1.875rem;
+    overflow: hidden;
+}
+
+.content-data-clubhouse {
+    width: 100%;
+    /*max-width: 67.500rem;*/
+    height: 31.25rem;
+    max-width: 61.250rem;
+    margin-top: 1.875rem;
+    overflow: hidden;
+}
+
+.content-data-contacts {
+    width: 100%;
+    /*height: 31.25rem;*/
+    height: 21.875rem;
+    max-width: 61.250rem;
+    margin-top: 1.875rem;
+    overflow: hidden;
+}
+
+.content-image-block {
+    width: 65%;
+    height: 31.25rem;
+}
+
+.content-image {
+    width: 100%;
+    object-fit: contain;
+    max-width:39.813rem;
+    max-height: 31.25rem;
+}
+
+.gallery-image {
+    display: inline;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    overflow: hidden;
+    border: 0;
+    /*max-width: 270rem;*/
+    max-height: 15.625rem;
+}
+
+.content-text {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    width: 30%;
+    height: 31.25rem;
+    font-size: 0.688rem;
+}
+
+.content-text-clubhouse {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    width: 33%;
+    height: 100%;
+    font-size: 0.688rem;
+    background-color:rgba(32, 31, 33, 0.7);
+    overflow: hidden;
+}
+
+.content-text-contacts {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    width: 33%;
+    height: 100%;
+    font-size: 0.688rem;
+    background-color:rgba(32, 31, 33, 0.7);
+    overflow: hidden;
+}
+
+.first-p {
+    margin-top: 0;
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+
+.news-title {
+    font-size: 1.438rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.news-date {
+    font-size: 0.938rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.news-text {
+    margin-top: 1.750rem;
+}
+
+.content-bg-grey {
+    width: 100%;
+    background-color: #201f21;
+}
+
+.content-bg-black {
+    width: 100%;
+    background-color: #000000;
+}
+
+.content-bg {
+    width: 100%;
+}
+
+.main-content {
+    min-height: 47.813rem;
+    position: relative;
+}
+
+.header-top-text {
+    font-size: 1.063rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 1.938rem;
+}
+
+.header-top-icons {
+    padding-top: 1.375rem;
+}
+
+.image-logo {
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+.link-active {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.link-inactive {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.image-tile-container {
+    position: relative;
+    width: 15.625rem;
+    height: 8.813rem;
+    text-align: center;
+    color: white;
+    object-fit: cover;
+    /*object-fit: contain;*/
+}
+
+.image-tile-text {
+    position: absolute;
+    opacity: 0.7;
+    background-color: #201f21;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15.625rem;
+    color: white;
+    font-weight: bold;
+    white-space: break-spaces;
+    word-wrap: break-word;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/Open_Sans/OpenSans-Bold.ttf');
+}

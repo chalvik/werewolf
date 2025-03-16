@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('gallery_items', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
             $table->foreignIdFor(\App\Models\Gallery::class);
+            $table->string('slug');
+            $table->longText('title');
+            $table->longText('short_content');
             $table->string('image')->nullable();
             $table->timestamps();
         });

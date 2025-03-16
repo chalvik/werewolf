@@ -99,9 +99,9 @@ class NewsResource extends ModelResource
     {
         return [
             'id',
-            'translation.title',
-            'translation.short_content',
-            'translation.content',
+            'title',
+            'short_content',
+            'content',
         ];
     }
 }

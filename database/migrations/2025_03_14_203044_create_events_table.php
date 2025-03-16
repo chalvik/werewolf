@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
+            $table->longText('title');
+            $table->longText('short_content');
+            $table->longText('content');
+            $table->longText('seo_title')->nullable();
+            $table->longText('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });
