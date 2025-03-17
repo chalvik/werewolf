@@ -20,6 +20,9 @@ class News extends Model
         'content',
         'slug',
         'image',
+        'seo_title',
+        'seo_keywords',
+        'seo_description',
     ];
 
     public function getSlugOptions() : SlugOptions

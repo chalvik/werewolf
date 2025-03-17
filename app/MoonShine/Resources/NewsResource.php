@@ -3,17 +3,13 @@
 namespace App\MoonShine\Resources;
 
 use App\Models\News;
-use App\Models\Page\Page;
-use App\MoonShine\Pages\NewsIndexPage;
 use MoonShine\Laravel\Enums\Action;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\Support\Attributes\Icon;
 use MoonShine\Support\ListOf;
 use MoonShine\TinyMce\Fields\TinyMce;
-use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Components\Tabs;
 use MoonShine\UI\Components\Tabs\Tab;
-use MoonShine\UI\Fields\File;
 use MoonShine\UI\Fields\ID;
 use MoonShine\UI\Fields\Image;
 use MoonShine\UI\Fields\Text;
@@ -51,9 +47,8 @@ class NewsResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
-            Image::make('Заголовок', 'image'),
-            Text::make('Заголовок', 'name'),
-            Text::make('Ссылка', 'slug'),
+            Image::make('Картинка', 'image'),
+            Text::make('Заголовок', 'title'),
         ];
     }
 
@@ -70,7 +65,9 @@ class NewsResource extends ModelResource
                     ID::make()->sortable(),
                     Text::make('Slug', 'slug')->nullable(),
                     Text::make('Заголовок', 'title')->required(),
-                    Image::make('Картинка', 'image')->required(),
+                    Image::make('Картинка', 'image')
+                        ->dir('/news')
+                        ->allowedExtensions(['jpg', 'gif', 'png']),
                     Textarea::make('Краткое содержжание', 'short_content')->required(),
                     TinyMce::make('Контент', 'content')->required(),
                 ]),

@@ -3,17 +3,14 @@
 namespace App\MoonShine\Resources;
 
 use App\Models\News;
-use App\Models\Page\Page;
-use App\MoonShine\Pages\NewsIndexPage;
+use App\Models\Page;
 use MoonShine\Laravel\Enums\Action;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\Support\Attributes\Icon;
 use MoonShine\Support\ListOf;
 use MoonShine\TinyMce\Fields\TinyMce;
-use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Components\Tabs;
 use MoonShine\UI\Components\Tabs\Tab;
-use MoonShine\UI\Fields\File;
 use MoonShine\UI\Fields\ID;
 use MoonShine\UI\Fields\Image;
 use MoonShine\UI\Fields\Text;
@@ -25,7 +22,7 @@ use MoonShine\UI\Fields\Textarea;
  */
 class PagesResource extends ModelResource
 {
-    protected string $model = News::class;
+    protected string $model = Page::class;
 
     protected string $column = 'name';
 
@@ -39,7 +36,7 @@ class PagesResource extends ModelResource
 
     public function getTitle(): string
     {
-        return __('Новости');
+        return __('Страницы');
     }
 
     protected function activeActions(): ListOf
@@ -51,9 +48,8 @@ class PagesResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
-            Image::make('Заголовок', 'image'),
-            Text::make('Заголовок', 'name'),
-            Text::make('Ссылка', 'slug'),
+            Image::make('Картинка', 'image'),
+            Text::make('Заголовок', 'title'),
         ];
     }
 
@@ -70,7 +66,9 @@ class PagesResource extends ModelResource
                     ID::make()->sortable(),
                     Text::make('Slug', 'slug')->nullable(),
                     Text::make('Заголовок', 'title')->required(),
-                    Image::make('Картинка', 'image')->required(),
+                    Image::make('Картинка', 'image')
+                        ->dir('/pages')
+                        ->allowedExtensions(['jpg', 'gif', 'png']),
                     Textarea::make('Краткое содержжание', 'short_content')->required(),
                     TinyMce::make('Контент', 'content')->required(),
                 ]),

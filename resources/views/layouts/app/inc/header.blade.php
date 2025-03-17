@@ -1,8 +1,14 @@
 <div class="content-bg-black">
     <div class="head">
         <div class="header-top-text block">
-            <a href="/" class="link-active">рус</a> |
-            <a href="/en" class="link-inactive">eng</a>
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    {{ $localeCode }}
+                </a>
+                @if (! $loop->last) | @endif
+            @endforeach
+{{--            <a href="/" class="link-active">рус</a> |--}}
+{{--            <a href="/en" class="link-inactive">eng</a>--}}
         </div>
         <div class="header-top-icons block content-right">
             <a href="/" target="_blank">

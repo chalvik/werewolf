@@ -2,18 +2,15 @@
 
 namespace App\MoonShine\Resources;
 
+use App\Models\Event;
 use App\Models\News;
-use App\Models\Page\Page;
-use App\MoonShine\Pages\NewsIndexPage;
 use MoonShine\Laravel\Enums\Action;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\Support\Attributes\Icon;
 use MoonShine\Support\ListOf;
 use MoonShine\TinyMce\Fields\TinyMce;
-use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Components\Tabs;
 use MoonShine\UI\Components\Tabs\Tab;
-use MoonShine\UI\Fields\File;
 use MoonShine\UI\Fields\ID;
 use MoonShine\UI\Fields\Image;
 use MoonShine\UI\Fields\Text;
@@ -25,7 +22,7 @@ use MoonShine\UI\Fields\Textarea;
  */
 class EventsResource extends ModelResource
 {
-    protected string $model = News::class;
+    protected string $model = Event::class;
 
     protected string $column = 'name';
 
@@ -39,7 +36,7 @@ class EventsResource extends ModelResource
 
     public function getTitle(): string
     {
-        return __('Новости');
+        return __('События');
     }
 
     protected function activeActions(): ListOf
@@ -51,9 +48,8 @@ class EventsResource extends ModelResource
     {
         return [
             ID::make()->sortable(),
-            Image::make('Заголовок', 'image'),
+            Image::make('Картинка', 'image'),
             Text::make('Заголовок', 'name'),
-            Text::make('Ссылка', 'slug'),
         ];
     }
 
@@ -70,7 +66,9 @@ class EventsResource extends ModelResource
                     ID::make()->sortable(),
                     Text::make('Slug', 'slug')->nullable(),
                     Text::make('Заголовок', 'title')->required(),
-                    Image::make('Картинка', 'image')->required(),
+                    Image::make('Картинка', 'image')
+                        ->dir('/events')
+                        ->allowedExtensions(['jpg', 'gif', 'png']),
                     Textarea::make('Краткое содержжание', 'short_content')->required(),
                     TinyMce::make('Контент', 'content')->required(),
                 ]),
