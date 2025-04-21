@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\MoonShine\Resources\EventsResource;
-use App\MoonShine\Resources\GalleriesResource;
+use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\PagesResource;
 use Illuminate\Support\ServiceProvider;
@@ -35,7 +35,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 NewsResource::class,
                 PagesResource::class,
                 EventsResource::class,
-                GalleriesResource::class
+                GalleryResource::class
             ])
             ->pages([
                 ...$config->getPages(),

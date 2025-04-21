@@ -3,6 +3,7 @@
 namespace App\MoonShine\Resources;
 
 use App\Models\News;
+use MoonShine\Laravel\Fields\Relationships\BelongsTo;
 use MoonShine\Laravel\Enums\Action;
 use MoonShine\Laravel\Resources\ModelResource;
 use MoonShine\Support\Attributes\Icon;
@@ -25,13 +26,6 @@ class NewsResource extends ModelResource
 
     protected string $column = 'name';
 
-    protected bool $createInModal = true;
-
-    protected bool $detailInModal = true;
-
-    protected bool $editInModal = true;
-
-    protected bool $cursorPaginate = true;
 
     public function getTitle(): string
     {
@@ -64,12 +58,20 @@ class NewsResource extends ModelResource
                 Tab::make('Основное', [
                     ID::make()->sortable(),
                     Text::make('Slug', 'slug')->nullable(),
+//                    Translatable::make('Название', 'title'),
+//                        ->requiredLanguages([config('app.fallback_locale'), 'ru']),
                     Text::make('Заголовок', 'title')->required(),
                     Image::make('Картинка', 'image')
                         ->dir('/news')
                         ->allowedExtensions(['jpg', 'gif', 'png']),
                     Textarea::make('Краткое содержжание', 'short_content')->required(),
                     TinyMce::make('Контент', 'content')->required(),
+                ]),
+                Tab::make('Gallery', [
+                    BelongsTo::make(
+                        'Галереи',
+                        'gallery',
+                        ''),
                 ]),
                 Tab::make('SEO', [
                     Text::make('Title', 'seo_title')->nullable(),

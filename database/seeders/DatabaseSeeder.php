@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use MoonShine\Laravel\MoonShineAuth;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        MoonShineAuth::getModel()::query()->create([
+            moonshineConfig()->getUserField('username', 'email') => 'admin@admin.ru',
+            moonshineConfig()->getUserField('name') => 'admin',
+            moonshineConfig()->getUserField('password') => Hash::make('admin'),
         ]);
     }
 }

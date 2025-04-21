@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\MoonShine\Layouts;
 
 use App\MoonShine\Resources\EventsResource;
-use App\MoonShine\Resources\GalleriesResource;
+use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\PagesResource;
 use MoonShine\Laravel\Layouts\AppLayout;
@@ -52,7 +52,7 @@ final class MoonShineLayout extends AppLayout
             MenuItem::make('Текстовые страницы', PagesResource::class),
             MenuItem::make('Новости', NewsResource::class),
             MenuItem::make('События', EventsResource::class),
-            MenuItem::make('Галереи Фото', GalleriesResource::class),
+            MenuItem::make('Галереи Фото', GalleryResource::class),
         ];
     }
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->longText('seo_keywords')->nullable();
             $table->longText('seo_description')->nullable();
             $table->string('image')->nullable();
+            $table->foreignIdFor(\App\Models\Gallery::class)->nullable();
             $table->timestamps();
         });
     }
