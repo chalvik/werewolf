@@ -1,4 +1,4 @@
-@extends('layouts.app.main')
+@extends('layouts.app.main_tw')
 
 @section('content')
  @include('inc.about')
