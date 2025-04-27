@@ -7,10 +7,10 @@
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                    <a href="{{ url("/about") }}" class="hover:underline me-4 md:me-6"> {{ __('app.menu.about')  }}</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">News</a>
+                    <a href="{{ route('news.index')  }}" class="hover:underline me-4 md:me-6">{{ __('app.menu.news')  }}</a>
                 </li>
             </ul>
         </div>
