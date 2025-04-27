@@ -15,4 +15,12 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-
+body {
+    color: white;
+    background: url('/image/header_bg.jpg') no-repeat center top #000000;
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
