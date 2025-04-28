@@ -101,3 +101,31 @@
 2025/04/26 09:38:28 [notice] 1#1: start worker process 29
 2025/04/26 09:38:28 [notice] 1#1: start worker process 30
 2025/04/26 09:38:28 [notice] 1#1: start worker process 31
+2025/04/27 19:55:46 [warn] 29#29: *1422 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.22.0.1, server: , request: "POST /admin/resource/pages-resource/crud/1 HTTP/1.1", host: "localhost:8081", referrer: "http://localhost:8081/admin/resource/pages-resource/index-page"
+2025/04/27 20:28:40 [warn] 28#28: *1778 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.22.0.1, server: , request: "POST /admin/resource/news-resource/crud HTTP/1.1", host: "localhost:8081", referrer: "http://localhost:8081/admin/resource/news-resource/form-page"
+2025/04/27 20:33:49 [warn] 30#30: *1828 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.22.0.1, server: , request: "POST /admin/resource/news-resource/crud HTTP/1.1", host: "localhost:8081", referrer: "http://localhost:8081/admin/resource/news-resource/form-page"
+2025/04/27 21:25:26 [warn] 28#28: *1992 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.22.0.1, server: , request: "POST /admin/resource/events-resource/crud HTTP/1.1", host: "localhost:8081", referrer: "http://localhost:8081/admin/resource/events-resource/form-page"
+2025/04/28 09:03:33 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/04/28 09:03:33 [notice] 29#29: gracefully shutting down
+2025/04/28 09:03:33 [notice] 29#29: exiting
+2025/04/28 09:03:33 [notice] 30#30: gracefully shutting down
+2025/04/28 09:03:33 [notice] 31#31: gracefully shutting down
+2025/04/28 09:03:33 [notice] 28#28: gracefully shutting down
+2025/04/28 09:03:33 [notice] 30#30: exiting
+2025/04/28 09:03:33 [notice] 29#29: exit
+2025/04/28 09:03:33 [notice] 30#30: exit
+2025/04/28 09:03:33 [notice] 31#31: exiting
+2025/04/28 09:03:33 [notice] 31#31: exit
+2025/04/28 09:03:33 [notice] 28#28: exiting
+2025/04/28 09:03:33 [notice] 28#28: exit
+2025/04/28 09:03:33 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/04/28 09:03:33 [notice] 1#1: worker process 31 exited with code 0
+2025/04/28 09:03:33 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/28 09:03:33 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2025/04/28 09:03:33 [notice] 1#1: worker process 28 exited with code 0
+2025/04/28 09:03:33 [notice] 1#1: worker process 29 exited with code 0
+2025/04/28 09:03:33 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/28 09:03:33 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2025/04/28 09:03:33 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/04/28 09:03:33 [notice] 1#1: worker process 30 exited with code 0
+2025/04/28 09:03:33 [notice] 1#1: exit

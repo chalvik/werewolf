@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\PageController;
 
 
 Route::group(
@@ -15,8 +16,10 @@ Route::group(
             return view('home');
         });
         Route::get('news', [NewsController::class, 'index'])->name('news.index');
-        Route::get('news/{news}', [NewsController::class, 'show'])->name('news.show');
+        Route::get('news/{news:slug}', [NewsController::class, 'show'])->name('news.show');
 
         Route::get('gallery', [NewsController::class, 'index'])->name('gallery.index');
+
+        Route::get('/{page:slug}', [PageController::class, 'show'])->name('page.show');
     }
 );
