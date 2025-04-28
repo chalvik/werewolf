@@ -26,14 +26,6 @@ class PagesResource extends ModelResource
 
     protected string $column = 'name';
 
-    protected bool $createInModal = true;
-
-    protected bool $detailInModal = true;
-
-    protected bool $editInModal = true;
-
-    protected bool $cursorPaginate = true;
-
     public function getTitle(): string
     {
         return __('Страницы');
