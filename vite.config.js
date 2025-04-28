@@ -12,6 +12,7 @@ export default defineConfig({
         hmr: { host: "localhost", protocol: "ws" },
     },
     plugins: [
+        tailwindcss(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,

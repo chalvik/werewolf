@@ -4,11 +4,9 @@
         <div class="flex flex-col justify-between leading-normal p-4">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">О клубе</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Мотоклуб (Motorcycle Club) WEREWOLF MC основан в Санкт-Петербурге в 1995 году и является старейшим клубом города.
-                Многие спрашивают нас, как появилось название Клуба WEREWOLF MC и что оно означает.
-                Отвечаем: "верфольф" или "оборотень" - это популярнейший герой древних легенд и сказок, существо, способное полностью и до неузнаваемости изменить свой облик, ведущее совсем разную жизнь днём и в ночные часы.
+                {{ $page->short_content }}
             </p>
-            <a href=""> Подробнее ... </a>
+            <a href="{{ route('page.show', $page)  }}"> Подробнее ... </a>
         </div>
     </div>
 </section>
