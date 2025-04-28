@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Page;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,8 @@ class BlockAbout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.block-about');
+        return view('components.block-about', [
+            'page' => Page::query()->where(['slug' => 'about'])->first()
+        ]);
     }
 }

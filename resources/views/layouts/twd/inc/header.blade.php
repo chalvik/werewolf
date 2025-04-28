@@ -1,7 +1,9 @@
 <header>
 
     <div class="flex flex-col items-center p-4">
-        <img src="https://werewolfmc.ru/wp-content/themes/werewolfmc-wp-theme/images/ww_logo.png" class="image-logo">
+        <a href="{{ route('home')  }}">
+            <img src="https://werewolfmc.ru/wp-content/themes/werewolfmc-wp-theme/images/ww_logo.png" class="image-logo">
+        </a>
     </div>
 
     <x-menu> </x-menu>
